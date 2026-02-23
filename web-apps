@@ -14,8 +14,6 @@
 <h1>Web Applications</h1>
 <p>Interactive GIS projects.</p>
 
-<iframe src="https://umontana.maps.arcgis.com/apps/instant/interactivelegend/index.html?appid=2ceebd1c315d45848d523d622ab3e53b" width="400" height="600" frameborder="0" style="border:0" allowfullscreen>iFrames are not supported on this page.</iframe>
-
 <iframe 
   src="https://umontana.maps.arcgis.com/apps/instant/interactivelegend/index.html?appid=2ceebd1c315d45848d523d622ab3e53b"
   width="100%"
