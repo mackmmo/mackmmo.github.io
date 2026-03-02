@@ -3,6 +3,16 @@ section {
   margin: 3rem auto;
   font-family: Arial, sans-serif;
 }
+.map-container {
+  text-align: center;
+}
+
+.map-container img {
+  width: 80%;
+  max-width: 750px;
+  height: auto;
+  border: 1px solid #ddd;
+}
 
 h2 {
   margin-bottom: 1rem;
