@@ -1,116 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mack Moore - GIS Portfolio</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        h1 {
-            border-bottom: 2px solid #0366d6;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #0366d6;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #586069;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e1e4e8;
-        }
-    </style>
-</head>
+<section class="projects">
+  <h2>Projects</h2>
 
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="static-maps.html">Static Maps</a> |
-  <a href="web-apps.html">Web Apps</a>
-</nav>
+  <div class="project-grid">
 
-<body>
-    <h1>Mack Moore</h1>
-    
-    <h2>About</h2>
-    <p>I graduated from the University of Montana in 2016 and as of 2026 recieved a GIS Certificate. Courses and work focused on real world problem solving with GIS in both Graphical User Interfaces and from custom scripting in Python.</p>
-    
-    <h2>Background & Area of Focus</h2>
-    <p>My background is in demographic and environmental spatial analyis.</p>
-    
-    <h2>Education</h2>
-    <p>
-        <strong>Geospatial Science</strong><br>
-        University of Montana<br>
-        GIS Certificate<br>
-        Expected Graduation: [Month Year]
-    </p>
-    
-    <h2>Skills</h2>
-    <h3>GIS & Remote Sensing</h3>
-    <ul>
-        <li>[List relevant technical skills]</li>
-        <li>[Software proficiencies]</li>
-        <li>[Analysis techniques]</li>
-    </ul>
-    
-    <h3>Programming & Data Analysis</h3>
-    <ul>
-        <li>[Languages/tools]</li>
-    </ul>
-    
-    <h2>Projects</h2>
-    <ul>
-        <li><a href="projects/project1.html">[Project 1 Title]</a> - [One sentence description]</li>
-        <li><a href="projects/project2.html">[Project 2 Title]</a> - [One sentence description]</li>
-    </ul>
-    
-    <h2>Database Design & Data Modeling</h2>
-    <ul>
-        <li><a href="database/database-projects.html">[Database Design Projects]</a></li>
-    </ul>
-    
-    <h2>Web Applications</h2>
-    <ul>
-        <li><a href="webapps/webapps.html">[ArcGIS Online Dashboards, Experience Builder, StoryMaps]</a></li>
-    </ul>
-    
-    <h2>Writing & Posters</h2>
-    <ul>
-        <li><a href="writing/writing-samples.html">[Writing Samples]</a></li>
-        <li><a href="posters/posters.html">[Conference & Research Posters]</a></li>
-    </ul>
-    
-    <div class="contact">
-        <h2>Contact</h2>
-        <ul>
-            <li>Email: <a href="mailto:your.email@student.cccs.edu">[your.email@student.cccs.edu]</a><ul><li>Remember! Your student email is purged from the system six months after graduation/completeion!</li><ul></li>
-            <li>GitHub: <a href="https://github.com/yourusername">[github.com/yourusername]</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile">[optional]</a></li>
-        </ul>
-    </div>
-</body>
-</html>
+    <!-- Rock Climbs vs Birds -->
+    <a href="rock-climbs-birds.html" class="card">
+      <div class="icon">
+        <!-- Mountain Icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 20l7-12 4 6 3-4 4 10H3z"/>
+        </svg>
+      </div>
+      <h3>Rock Climbs vs Birds</h3>
+      <p>Spatial overlap analysis of climbing routes and bird habitats.</p>
+      <span class="tag">Static Map</span>
+    </a>
+
+    <!-- Road Cost Analysis -->
+    <a href="road-cost-analysis.html" class="card">
+      <div class="icon">
+        <!-- Road Icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 2v20M7 4l2 16M17 4l-2 16"/>
+        </svg>
+      </div>
+      <h3>Road Cost Analysis</h3>
+      <p>Lubrecht Experimental Forest terrain & infrastructure modeling.</p>
+      <span class="tag">Static Map</span>
+    </a>
+
+    <!-- Emergency Response -->
+    <a href="emergency-response.html" class="card">
+      <div class="icon">
+        <!-- Emergency Cross -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </div>
+      <h3>Emergency Time Response</h3>
+      <p>California emergency response accessibility analysis.</p>
+      <span class="tag">Static Map</span>
+    </a>
+
+    <!-- Urban Camping Dashboard -->
+    <a href="urban-camping-dashboard.html" class="card">
+      <div class="icon">
+        <!-- Tent Icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 20l9-16 9 16H3z"/>
+        </svg>
+      </div>
+      <h3>Urban Camping Dashboard</h3>
+      <p>Where can you camp within Missoula City Limits?</p>
+      <span class="tag webapp">Web App</span>
+    </a>
+
+    <!-- Lolo App -->
+    <a href="lolo-app.html" class="card">
+      <div class="icon">
+        <!-- Code Icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+        </svg>
+      </div>
+      <h3>Lolo App</h3>
+      <p>Full-stack spatial application in progress.</p>
+      <span class="tag code">Coding Project</span>
+    </a>
+
+  </div>
+</section>
