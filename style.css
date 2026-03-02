@@ -1,18 +1,26 @@
-.icon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+section {
+  max-width: 700px;
+  margin: 3rem auto;
+  font-family: Arial, sans-serif;
 }
 
-.icon svg {
-  width: 40px;
-  height: 40px;
-  stroke: #1f2937;
+h2 {
+  margin-bottom: 1rem;
 }
 
-.card:hover .icon svg {
-  stroke: #2563eb;
+h3 {
+  margin-top: 2rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #1d4ed8;
+}
+
+a:hover {
+  text-decoration: underline;
 }
