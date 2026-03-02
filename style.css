@@ -7,6 +7,12 @@ section {
   text-align: center;
 }
 
+.header-accent {
+  display: block;
+  width: 200px;   /* adjust as needed */
+  margin: 0.5em auto 1em auto;
+}
+
 .map-container img {
   width: 80%;
   max-width: 750px;
