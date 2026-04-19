@@ -1,20 +1,30 @@
-.vert_screenshot {
-    width: 100%;
-    max-width: 300px;   /* controls size */
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 20px;
+/* Gallery Layout */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+/* Vertical phone screenshots */
+.screenshot_vert {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Database diagram (large image) */
 .diagram {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     height: auto;
     display: block;
-    margin: 30px auto;
+    margin: 0 auto 20px auto;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 section {
