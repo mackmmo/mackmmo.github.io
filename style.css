@@ -1,3 +1,37 @@
+nav {
+  max-width: 700px;
+  margin: 20px auto 40px auto;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  margin: 0 15px;
+  position: relative;
+}
+
+nav a:hover {
+  color: #1d4ed8;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #1d4ed8;
+  transition: 0.3s;
+  margin: auto;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
