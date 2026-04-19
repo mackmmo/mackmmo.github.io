@@ -49,11 +49,12 @@
         <p>
             I designed and implemented the spatial database architecture, including route hierarchies,
             optimized filtering workflows, and built backend endpoints to serve geospatial data efficiently. 
-            Additionally, I played the role of project manager in a team of three. As project manager, I 
+            Additionally, I assumed the role of project manager in a team of three. As project manager, I 
             was responsible for delegating tasks to develop the frontend and UX/UI.
         </p>
-        <h2>The Vision and Workflow</h2>
+        <h2>The Workflow</h2>
         <p>
+        <h3>The Vision</h3>
             As a rock climber myself and author of A Rockclimber's Guide to Lolo Pass, I wanted to create a mobile
             application to be used at home and out climbing to both explore Lolo climbing spatially and accurately guide the user
             to walls and specific routes.
@@ -61,31 +62,43 @@
             As with other climbing guidebook mapping applications. The UI is centered around a map used to pan and zoom to different
             locations, while also allowing filterable searches that output lists of routes. This filtering is made possible with a PostgreSQL/
             postGIS database. The database is set up with four relational tables: Sectors > Areas > Subares > Routes. This
-            structure made the most sense when organizing the routes based on the locations.
+            structure made the most sense when organizing the routes based on the locations. My Django backend utilizes REST APIs to
+            return endpoints (GeoJSON/JSON).
             
         <h3>Sectors</h3>
             Spatially, each sector is a polygon, with individual areas as multipolygons within it. Sectors do not carry much information
             besides a "spatial bucket" for areas to live in.
             
         <h3>Areas</h3>
-            These multipolygon areas, were generated from LiDAR DEMs. The DEMs were processed by first converting to a slope raster. I then masked out all pixels
-            that were not in a range between 60-80 degrees. This produced a raster of all cliffline within the Lolo area which were 
+            These multipolygon areas were generated from LiDAR DEMs. The DEMs were processed by first converting to a slope raster. I then masked out all pixels
+            that were not in a range between 60 to 80 degrees. This produced a raster of all clifflines within the Lolo area, which were 
             then converted to polygons. The next step was to manually place a point for each area location. For the next steps,
             I imported a shapefile for area points and area polygons with CRS 6857 (web mercator). Within the PostgreSQL/postGIS
-            environment, I executed a SQL expression that is equivalent to a spatial join in other GIS. This output consisted of
+            environment, I executed an SQL expression, equivalent to a spatial join in other GIS. This output consisted of
             multi-polygon features that now belong to an area. To finalize the area table, I imported a csv with area attributes and 
             joined it to the area table on area name. By far, the trickiest table to create as the workflow from raster, to polygon,
             to multipolygon feature, to PostgreSQL table time instensive.
 
+        <h3>Subareas</h3>    
+            A subarea is a wall or other smaller area within an area. In the schema, some areas do not have subareas since there may
+            only be a single wall for the whole area. It was necessary to subdivide the areas a step further to make my sun aspect logic work.
+            An area my have multiple walls with different aspects. It also create a more organized intuitive way for a user to
+            compartmentalize an area. Geomtries of subareas fall back to the geometry of the area.
             
+        <h3>Routes</h3>
+            A route lives in the route table and contains various filterable attributes such as grade, type, geometry, and star rating.
+            The geometry of a route falls back onto its subarea and if a subarea does not exists, it's associated area.
             
+        <h3>Django Backend</h3>
+            I utilized a Django backend and Restful APIs to create Models, Merializers, ListViews, and DetailViews to create endpoints
+            used by front end HTTP requests.
         <p>
     </section>
 
     <section class="section">
         <h2>Screenshots</h2>
         <div class="gallery">
-            <img src="database_diagram.png" alt="Database Diagram">
+            <img src="database_diagram.png" class="diagram">
             <img src="images/lolo2.png" alt="Route list">
             <img src="images/lolo3.png" alt="Route detail">
         </div>
@@ -93,7 +106,7 @@
 
     <section class="section alt">
         <h2>Links</h2>
-        <a href="https://github.com/yourusername/lolo-app" target="_blank" class="btn">GitHub Repo</a>
+        <a href="https://github.com/mackmmo/Lolo_app.git" target="_blank" class="btn">GitHub Repo</a>
     </section>
 
     <footer>
