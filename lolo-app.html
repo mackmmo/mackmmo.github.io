@@ -52,7 +52,7 @@
             Additionally, I played the role of project manager in a team of three. As project manager, I 
             was responsible for delegating tasks to develop the frontend and UX/UI.
         </p>
-        <h2>The Vision</h2>
+        <h2>The Vision and Workflow</h2>
         <p>
             As a rock climber myself and author of A Rockclimber's Guide to Lolo Pass, I wanted to create a mobile
             application to be used at home and out climbing to both explore Lolo climbing spatially and accurately guide the user
@@ -60,7 +60,24 @@
 
             As with other climbing guidebook mapping applications. The UI is centered around a map used to pan and zoom to different
             locations, while also allowing filterable searches that output lists of routes. This filtering is made possible with a PostgreSQL/
-            postGIS database. The database is setup with four relational tables. 
+            postGIS database. The database is set up with four relational tables: Sectors > Areas > Subares > Routes. This
+            structure made the most sense when organizing the routes based on the locations.
+            
+        <h3>Sectors</h3>
+            Spatially, each sector is a polygon, with individual areas as multipolygons within it. Sectors do not carry much information
+            besides a "spatial bucket" for areas to live in.
+            
+        <h3>Areas</h3>
+            These multipolygon areas, were generated from LiDAR DEMs. The DEMs were processed by first converting to a slope raster. I then masked out all pixels
+            that were not in a range between 60-80 degrees. This produced a raster of all cliffline within the Lolo area which were 
+            then converted to polygons. The next step was to manually place a point for each area location. For the next steps,
+            I imported a shapefile for area points and area polygons with CRS 6857 (web mercator). Within the PostgreSQL/postGIS
+            environment, I executed a SQL expression that is equivalent to a spatial join in other GIS. This output consisted of
+            multi-polygon features that now belong to an area. To finalize the area table, I imported a csv with area attributes and 
+            joined it to the area table on area name. By far, the trickiest table to create as the workflow from raster, to polygon,
+            to multipolygon feature, to PostgreSQL table time instensive.
+
+            
             
         <p>
     </section>
@@ -68,7 +85,7 @@
     <section class="section">
         <h2>Screenshots</h2>
         <div class="gallery">
-            <img src="images/lolo1.png" alt="Map view">
+            <img src="database_diagram.png" alt="Database Diagram">
             <img src="images/lolo2.png" alt="Route list">
             <img src="images/lolo3.png" alt="Route detail">
         </div>
