@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<nav>
-  <a href="index.html">Home</a>
-</nav>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trail Planning: Mill Creek Climbing Area</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missoula Urban Camping Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="dashboard-page">
-    <h1>Trail Planning Experience</h1>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
 
-    <iframe 
-      src="https://experience.arcgis.com/experience/b4d3d7f67ac04bd4b04c1a4f7cdd965f" 
-      width="100%" 
-      height="800" 
-      frameborder="0" 
+  <header class="hero-banner">
+    <div class="hero-text">
+      <h1>Trail Planning - Least Cost Path</h1>
+      <p>An interactive Esri Experience designed to visualize trail taking slope, length, building cost, 
+        and raptor closures into account for the cost surface.
+      </p>
+    </div>
+  </header>
+
+  <section class="content-card map-card">
+    <iframe
+      src="https://experience.arcgis.com/experience/b4d3d7f67ac04bd4b04c1a4f7cdd965f"
+      width="100%"
+      height="600"
+      frameborder="0"
       allowfullscreen>
     </iframe>
   </section>
-<section class="section alt">
-        <h2>Project Overview</h2>
-        <p>
-            The objective of this project was to explore trail construction options for the Mill
+
+  <section class="content-card text-card">
+    <h2>Project Overview</h2>
+    <p class="narrow-text">
+      The objective of this project was to explore trail construction options for the Mill
 Creek Climbing area. Mill Creek is a popular climbing area south of Missoula that has
 steep terrain and lengthy approaches to the 50+ climbing routes. The area is
 scheduled for trail construction this summer, pending grant funding, and presents a
@@ -32,6 +42,13 @@ uniquely challenging construction site. Our analysis prioritizes trail paths whi
 trail length, slope, elevation gain, and ultimately physical construction costs (length
 and construction difficulty), while promoting trail accessibility and ease of
 construction.
-        </p>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Mack Moore | GIS Portfolio</p>
+  </footer>
+
 </body>
 </html>
+
