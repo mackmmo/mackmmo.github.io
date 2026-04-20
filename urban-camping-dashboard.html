@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<nav>
-  <a href="index.html">Home</a>
-</nav>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Missoula Urban Camping Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="dashboard-page">
-    <h1>Missoula Urban Camping Dashboard</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="static-maps.html">Static Maps</a>
+    <a href="web-apps.html">Web Apps</a>
+  </nav>
 
-    <iframe 
-      src="https://umontana.maps.arcgis.com/apps/dashboards/d7626a9aa5794faabefd21cd2e4e5136" 
-      width="100%" 
-      height="800" 
-      frameborder="0" 
+  <header class="hero-banner">
+    <div class="hero-text">
+      <h1>Missoula Urban Camping Dashboard</h1>
+      <p>
+        An interactive dashboard created to visualize the spatial impact of Missoula’s 2024 urban camping ordinances.
+      </p>
+    </div>
+  </header>
+
+  <section class="content-card map-card">
+    <iframe
+      src="https://umontana.maps.arcgis.com/apps/dashboards/d7626a9aa5794faabefd21cd2e4e5136"
+      width="100%"
+      height="800"
+      frameborder="0"
       allowfullscreen>
     </iframe>
   </section>
-<section class="section alt">
-        <h2>Project Overview</h2>
-        <p>This project was created by Mack Moore, Reya Worley, and Billy Li to help visualize
-the spatial impact of Missoula’s 2024 urban camping ordinances, adopted by the Missoula
-City Council. The project maps the buffer and location restrictions outlined in Missoula
-Municipal Code Section 12.60.030 to show where camping is prohibited and where it may
-still be allowed within city limits. Our goal was to make these regulations easier to
-understand by translating complex legal language into a clear, interactive spatial
-visualization.</p>
+
+  <section class="content-card text-card">
+    <h2>Project Overview</h2>
+    <p class="narrow-text">
+      This project was created by Mack Moore, Reya Worley, and Billy Li to help visualize the spatial impact of Missoula’s 2024 urban camping ordinances, adopted by the Missoula City Council. The project maps the buffer and location restrictions outlined in Missoula Municipal Code Section 12.60.030 to show where camping is prohibited and where it may still be allowed within city limits. Our goal was to make these regulations easier to understand by translating complex legal language into a clear, interactive spatial visualization.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Mack Moore | GIS Portfolio</p>
+  </footer>
+
 </body>
 </html>
