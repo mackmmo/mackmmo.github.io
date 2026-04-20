@@ -245,3 +245,9 @@ footer {
     width: 180px;
   }
 }
+.map-card iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  display: block;
+}
