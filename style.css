@@ -1,146 +1,186 @@
-/* General page */
-/* Shared card base */
-.content-card {
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  border-radius: 20px;
-  padding: 28px 32px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-}
-
-/* Text-focused card */
-.text-card {
-  text-align: left;
-}
-
-.text-card h2,
-.text-card h3,
-.text-card p,
-.text-card ul,
-.text-card li,
-.text-card div {
-  text-align: left;
-}
-
-/* Map-focused card */
-.map-card {
-  text-align: center;
-}
-
-.map-card .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  padding: 10px 0;
-}
-
-.map-card .map-container img {
-  display: block;
-  margin: 0 auto;
-  width: auto;
-  max-width: 700px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-/* Tag styling */
-.tag {
-  display: inline-block;
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1;
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #222;
-  background: #f8f8f8;
+  background: #f5f5f5;
+  line-height: 1.6;
 }
 
-/* Nav */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Layout ===== */
+.site-width {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===== Nav ===== */
 nav {
-  max-width: 900px;
+  max-width: 980px;
   margin: 20px auto 0 auto;
-  padding: 0 1rem 12px 1rem;
+  padding: 0 1rem 14px 1rem;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
 nav a {
-  text-decoration: none;
-  color: #1d4ed8;
-  font-weight: 500;
   margin: 0 14px;
+  font-weight: 500;
 }
 
-/* Hero banner */
+/* ===== Hero banner ===== */
 .hero-banner {
-  max-width: 900px;
-  margin: 30px auto 40px auto;
-  padding: 40px 32px;
+  max-width: 980px;
+  margin: 28px auto 36px auto;
+  padding: 38px 40px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #dbeafe, #c7d7f3, #d9e8f7);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.hero-banner.profile-hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #dbeafe, #bfdbfe, #e0f2fe);
+  gap: 28px;
+}
+
+.hero-text {
+  flex: 1;
 }
 
 .hero-text h1 {
-  margin: 0;
+  margin: 0 0 12px 0;
   font-size: 3rem;
+  line-height: 1.1;
 }
 
 .hero-text p {
-  margin: 10px 0 0 0;
-  font-size: 1.25rem;
+  margin: 0 0 18px 0;
+  font-size: 1.15rem;
   color: #374151;
+  max-width: 760px;
 }
 
-/* ONLY the profile photo */
 .hero-photo img {
   width: 180px;
   height: 180px;
   object-fit: cover;
   border-radius: 50%;
-  display: block;
   border: 5px solid white;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  flex-shrink: 0;
 }
 
-/* Main content */
-.page-wrap {
-  max-width: 900px;
-  margin: 0 auto 60px auto;
-  padding: 0 1rem;
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #1d4ed8;
+  color: white;
+  font-weight: 600;
 }
 
+.btn:hover {
+  text-decoration: none;
+  opacity: 0.92;
+}
+
+/* ===== Card system ===== */
 .content-card {
-  max-width: 900px;
-  margin: 30px auto;
-  border-radius: 20px;
-  background: white;
+  max-width: 980px;
+  margin: 28px auto;
   padding: 28px 32px;
+  background: white;
+  border-radius: 24px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  display: block;       
-  text-align: center;   
 }
 
-.bio-text {
-  max-width: 700px;
-  line-height: 1.7;
+.text-card {
+  text-align: left;
 }
 
-/* Project screenshots */
+.text-card h2,
+.text-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.text-card p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.text-card ul {
+  margin-top: 0;
+  padding-left: 1.25rem;
+}
+
+.text-card li {
+  margin-bottom: 8px;
+}
+
+.text-card .narrow-text {
+  max-width: 760px;
+}
+
+/* ===== Map card ===== */
+.map-card {
+  text-align: center;
+}
+
+.map-card h2,
+.map-card h3,
+.map-card p {
+  text-align: center;
+}
+
+.map-card .map-container img {
+  margin: 0 auto;
+  max-width: 720px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* ===== Tags ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* ===== Screenshot / gallery ===== */
 .gallery {
   display: flex;
   justify-content: center;
@@ -149,68 +189,59 @@ nav a {
   flex-wrap: wrap;
 }
 
-.gallery .screenshot_vert {
+.screenshot-vert {
   width: 220px;
-  height: auto;
-  display: block;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  flex: 0 0 auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
 .diagram {
-  width: 100%;
-  max-width: 700px;
-  height: auto;
-  display: block;
+  max-width: 760px;
   margin: 0 auto 20px auto;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
-.map-page {
-  max-width: 900px;
-  margin: 3rem auto;
+
+/* ===== Footer ===== */
+footer {
+  max-width: 980px;
+  margin: 36px auto 50px auto;
   padding: 0 1rem;
-}
-
-.map-page h1 {
-  margin-bottom: 1.5rem;
-}
-
-.map-container {
   text-align: center;
-  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 0.95rem;
 }
 
-.map-container img {
-  width: auto;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 0 auto;   /* THIS centers it */
-}
+/* ===== Responsive ===== */
+@media (max-width: 760px) {
+  .hero-banner.profile-hero {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.map-description {
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  padding: 10px 0;
-}
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.tag {
-  display: inline-block;
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1;
+  .hero-photo img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .content-card {
+    padding: 22px 20px;
+  }
+
+  .map-card .map-container img {
+    max-width: 100%;
+  }
+
+  .screenshot-vert {
+    width: 180px;
+  }
 }
