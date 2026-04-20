@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Road Cost Analysis</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Cost Analysis</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="static-maps.html">Static Maps</a>
+    <a href="web-apps.html">Web Apps</a>
+  </nav>
 
-<header class="hero-banner">
-    <div class="hero-content">
-        <h1>Road Cost Analysis</h1>
-        <p>In this analysis of road building cost in the Lubrecht Experimental Forest, my final "Cost Mask" analysis output visualizes the area where road cost is greater than or equal to $50,000.</p>
+  <header class="hero-banner">
+    <div class="hero-text">
+      <h1>Road Cost Analysis</h1>
+      <p>
+        In this analysis of road building cost in the Lubrecht Experimental Forest, my final cost mask output visualizes the area where road cost is greater than or equal to $50,000.
+      </p>
     </div>
-</header>
+  </header>
 
-<section class="content-card">
-  <div class="tags">
-    <span class="tag">ArcGIS Pro</span>
-    <span class="tag">Raster Analysis</span>
-    <span class="tag">Spatial Join</span>
-    <span class="tag">Buffer Analysis</span>
-    <span class="tag">Cost Surface</span>
-  </div>
-</section>
+  <section class="content-card map-card">
+    <div class="tags">
+      <span class="tag">ArcGIS Pro</span>
+      <span class="tag">Raster Analysis</span>
+      <span class="tag">Spatial Join</span>
+      <span class="tag">Buffer Analysis</span>
+      <span class="tag">Cost Surface</span>
+    </div>
+  </section>
 
-<section class="content-card">
+  <section class="content-card map-card">
     <div class="map-container">
-      <img src="RoadCost.jpg" alt="Road cost map">
+      <img src="images/RoadCost.jpg" alt="Road cost analysis map">
     </div>
-</section>
+  </section>
 
-<footer>
+  <section class="content-card text-card">
+    <h2>Project Summary</h2>
+    <p class="narrow-text">
+      This project evaluated the potential cost of road construction across the Lubrecht Experimental Forest. I used terrain and distance-based raster workflows to identify areas where road building would be especially expensive, then created a final cost mask highlighting areas at or above the selected threshold.
+    </p>
+  </section>
+
+  <footer>
     <p>© 2026 Mack Moore | GIS Portfolio</p>
-</footer>
+  </footer>
 
 </body>
 </html>
