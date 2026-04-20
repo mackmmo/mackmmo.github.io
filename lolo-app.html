@@ -1,129 +1,68 @@
 <!DOCTYPE html>
-<nav>
-  <a href="index.html">Home</a>
-</nav>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lolo Climbing App | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lolo Climbing App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="hero-banner">
-    <div class="hero-content">
-        <h1>Lolo Climbing App</h1>
-        <p>A geospatial mobile application for exploring climbing routes near Lolo Pass.</p>
-        <a href="https://github.com/mackmmo/Lolo_app.git" target="_blank" class="btn">GitHub Repo</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="static-maps.html">Static Maps</a>
+    <a href="web-apps.html">Web Apps</a>
+  </nav>
+
+  <header class="hero-banner">
+    <div class="hero-text">
+      <h1>Lolo Climbing App</h1>
+      <p>A geospatial mobile application for exploring climbing routes near Lolo Pass.</p>
+      <a href="https://github.com/mackmmo/Lolo_app.git" target="_blank" class="btn">GitHub Repo</a>
     </div>
-</header>
+  </header>
 
-    <section id="project" class="section">
-        <h2>Project Overview</h2>
-        <p>
-            The Lolo Climbing App is a custom-built geospatial application designed to help climbers 
-            discover routes, filter by characteristics, and explore crags in an intuitive way.
-        </p>
-    </section>
+  <section class="content-card text-card">
+    <h2>Project Overview</h2>
+    <p class="narrow-text">
+      The Lolo Climbing App is a custom-built geospatial application designed to help climbers discover routes, filter by characteristics, and explore crags in an intuitive way.
+    </p>
+  </section>
 
-    <section class="content-card text-card">
-        <h2>Key Features</h2>
-        <ul>
-            <li>Route filtering by grade, sun exposure, and area</li>
-            <li>Custom spatial database using PostGIS</li>
-            <li>Interactive map-based exploration</li>
-        </ul>
-    </section>
+  <section class="content-card text-card">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Route filtering by grade, sun exposure, and area</li>
+      <li>Custom spatial database using PostGIS</li>
+      <li>Interactive map-based exploration</li>
+    </ul>
+  </section>
 
-    <section class="content-card text-card">
-        <h2>Tech Stack</h2>
-        <div class="tech-grid">
-            <div class="tech">PostgreSQL + PostGIS</div>
-            <div class="tech">Django</div>
-            <div class="tech">JavaScript</div>
-            <div class="tech">Leaflet / Mapping</div>
-            <div class="tech">HTML & CSS</div>
-        </div>
-    </section>
+  <section class="content-card text-card">
+    <h2>Tech Stack</h2>
+    <p class="narrow-text">PostgreSQL + PostGIS<br>Django<br>JavaScript<br>Leaflet / Mapping<br>HTML &amp; CSS</p>
+  </section>
 
-    <section class="content-card text-card">
-        <h2>My Role</h2>
-        <p>
-            I designed and implemented the spatial database architecture, including route hierarchies,
-            optimized filtering workflows, and built backend endpoints to serve geospatial data efficiently. 
-            Additionally, I assumed the role of project manager in a team of three. As project manager, I 
-            was responsible for delegating tasks to develop the frontend and UX/UI.
-        </p>
-        <h2>The Workflow</h2>
-        <p>
-        <h3>The Vision</h3>
-            As a rock climber myself and author of A Rockclimber's Guide to Lolo Pass, I wanted to create a mobile
-            application to be used at home and out climbing to both explore Lolo climbing spatially and accurately guide the user
-            to walls and specific routes.
+  <section class="content-card text-card">
+    <h2>My Role</h2>
+    <p class="narrow-text">
+      I designed and implemented the spatial database architecture, including route hierarchies, optimized filtering workflows, and built backend endpoints to serve geospatial data efficiently. I also acted as project manager in a team of three and delegated frontend and UX/UI tasks.
+    </p>
+  </section>
 
-            As with other climbing guidebook mapping applications. The UI is centered around a map used to pan and zoom to different
-            locations, while also allowing filterable searches that output lists of routes. This filtering is made possible with a PostgreSQL/
-            postGIS database. The database is set up with four relational tables: Sectors > Areas > Subares > Routes. This
-            structure made the most sense when organizing the routes based on the locations. My Django backend utilizes REST APIs to
-            return endpoints (GeoJSON/JSON).
-            
-        <h3>Sectors</h3>
-            Spatially, each sector is a polygon, with individual areas as multipolygons within it. Sectors do not carry much information
-            besides a "spatial bucket" for areas to live in.
-            
-        <h3>Areas</h3>
-            These multipolygon areas were generated from LiDAR DEMs. The DEMs were processed by first converting to a slope raster. I then masked out all pixels
-            that were not in a range between 60 to 80 degrees. This produced a raster of all clifflines within the Lolo area, which were 
-            then converted to polygons. The next step was to manually place a point for each area location. For the next steps,
-            I imported a shapefile for area points and area polygons with CRS 6857 (web mercator). Within the PostgreSQL/postGIS
-            environment, I executed an SQL expression, equivalent to a spatial join in other GIS. This output consisted of
-            multi-polygon features that now belong to an area. To finalize the area table, I imported a csv with area attributes and 
-            joined it to the area table on area name. By far, the trickiest table to create as the workflow from raster, to polygon,
-            to multipolygon feature, to PostgreSQL table time instensive.
+  <section class="content-card map-card">
+    <h2>Project Images</h2>
+    <img src="images/database_diagram.png" class="diagram" alt="Database diagram">
 
-        <h3>Subareas</h3>    
-            A subarea is a wall or other smaller area within an area. In the schema, some areas do not have subareas since there may
-            only be a single wall for the whole area. It was necessary to subdivide the areas a step further to make my sun aspect logic work.
-            An area my have multiple walls with different aspects. It also create a more organized intuitive way for a user to
-            compartmentalize an area. Geomtries of subareas fall back to the geometry of the area.
-            
-        <h3>Routes</h3>
-            A route lives in the route table and contains various filterable attributes such as grade, type, geometry, and star rating.
-            The geometry of a route falls back onto its subarea and if a subarea does not exists, it's associated area.
-            
-        <h3>Django Backend</h3>
-            I utilized a Django backend and Restful APIs to create Models, Merializers, ListViews, and DetailViews to create endpoints
-            used by front end HTTP requests.
-        <p>
-    </section>
-
-<section class="section">
-    <h2>Screenshots</h2>
-
-    <h3>Database Schema</h3>
-    <img src="database_diagram.png" class="diagram" alt="Database diagram">
-
-    <h3>App Screens</h3>
     <div class="gallery">
-        <img src="app_screenshot1.png" class="screenshot_vert" alt="App screenshot 1">
-        <img src="app_screenshot2.png" class="screenshot_vert" alt="App screenshot 2">
+      <img src="images/app_screenshot1.png" class="screenshot-vert" alt="App screenshot 1">
+      <img src="images/app_screenshot2.png" class="screenshot-vert" alt="App screenshot 2">
     </div>
-</section>
-   
-    <section class="section alt">
-        <h2>Endpoint URLs</h2>
-        <a href="https://lolo-app-1.onrender.com/sectors/" target="_blank" class="btn">Sectors</a>
-        <a href="https://lolo-app-1.onrender.com/areas/" target="_blank" class="btn">Areas</a>
-        <a href="https://lolo-app-1.onrender.com/subareas/" target="_blank" class="btn">Subareas</a>
-        <a href="https://lolo-app-1.onrender.com/routes/" target="_blank" class="btn">Routes</a>
-    </section>
+  </section>
 
-    <footer>
-        <p>© 2026 Mack Moore | GIS Portfolio</p>
-    </footer>
+  <footer>
+    <p>© 2026 Mack Moore | GIS Portfolio</p>
+  </footer>
 
 </body>
 </html>
