@@ -131,9 +131,7 @@ section {
   max-width: 600px;
   height: auto;
   display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin: 0 auto;   /* THIS centers it */
 }
 
 .map-description {
@@ -141,11 +139,13 @@ section {
   margin: 0 auto;
   line-height: 1.7;
 }
+
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 16px 0 24px 0;
+  justify-content: center;
+  padding: 10px 0;
 }
 
 .tag {
