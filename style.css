@@ -1,4 +1,63 @@
 /* General page */
+/* Shared card base */
+.content-card {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+/* Text-focused card */
+.text-card {
+  text-align: left;
+}
+
+.text-card h2,
+.text-card h3,
+.text-card p,
+.text-card ul,
+.text-card li,
+.text-card div {
+  text-align: left;
+}
+
+/* Map-focused card */
+.map-card {
+  text-align: center;
+}
+
+.map-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.map-card .map-container img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  max-width: 700px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Tag styling */
+.tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
