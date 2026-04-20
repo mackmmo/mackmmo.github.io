@@ -65,17 +65,12 @@ nav a {
   padding: 0 1rem;
 }
 
-section {
+.content-card {
   max-width: 900px;
-  margin: 30px auto 40px auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  margin: 30px auto;
   border-radius: 20px;
   background: white;
   padding: 28px 32px;
-  margin-bottom: 24px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
